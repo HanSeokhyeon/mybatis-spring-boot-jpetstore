@@ -1,4 +1,4 @@
-package com.kazuki43zoo.jpetstore.ui.controller;
+package com.kazuki43zoo.jpetstore.api;
 
 import com.kazuki43zoo.jpetstore.domain.Account;
 import com.kazuki43zoo.jpetstore.service.AdminService;
