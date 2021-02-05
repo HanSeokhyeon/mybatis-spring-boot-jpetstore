@@ -16,9 +16,11 @@
 package com.kazuki43zoo.jpetstore.api;
 
 import com.kazuki43zoo.jpetstore.domain.Category;
+import com.kazuki43zoo.jpetstore.domain.Item;
 import com.kazuki43zoo.jpetstore.domain.Product;
 import com.kazuki43zoo.jpetstore.service.CatalogService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -45,6 +47,16 @@ public class CatalogApiController {
         Map<String, Object> map = new HashMap<>();
         map.put("catagory", category);
         map.put("productList", productList);
+        return map;
+    }
+
+    @GetMapping("/products/{productId}")
+    public Object viewProduct(@PathVariable String productId) {
+        Product product = catalogService.getProduct(productId);
+        List<Item> itemList = catalogService.getItemListByProduct(productId);
+        Map<String, Object> map = new HashMap<>();
+        map.put("product", product);
+        map.put("itemList", itemList);
         return map;
     }
 }
