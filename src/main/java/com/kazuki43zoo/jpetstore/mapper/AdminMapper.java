@@ -10,11 +10,11 @@ import java.util.List;
 @Mapper
 @CacheNamespace
 public interface AdminMapper {
-    public int getAccountCount();
+    int getAccountCount();
 
     List<Account> getAccountList(String keyword);
 
-    public int getProductCount();
+    int getProductCount();
 
     List<Product> getProductList(String keyword);
 }
