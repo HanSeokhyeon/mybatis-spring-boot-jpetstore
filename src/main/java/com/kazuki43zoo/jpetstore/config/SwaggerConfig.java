@@ -28,8 +28,8 @@ public class SwaggerConfig {
                 .apiInfo(this.apiInfo())
                 .select()
                 .apis(RequestHandlerSelectors
-                        .basePackage("com.kazuki43zoo.jpetstore.api"))
-                .paths(PathSelectors.ant("/api/**"))
+                        .basePackage("com.kazuki43zoo.jpetstore.ui.controller"))
+                .paths(PathSelectors.ant("/**"))
                 .build();
     }
 

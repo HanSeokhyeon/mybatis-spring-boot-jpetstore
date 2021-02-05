@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<body>
+<div id="Content">
+  <section layout:fragment="content">
+    <p th:text="${review.productId}"></p>
+    <hr>
+    <form th:action="@{/review}" method="post">
+      <input type="text" name="productId"><br>
+      <input type="text" name="name"><br>
+      <input type="text" name="description">
+      <br>
+      <input type="submit" value="Submit">
+    </form>
+  </section>
+</div>
+</body>
+</html>
